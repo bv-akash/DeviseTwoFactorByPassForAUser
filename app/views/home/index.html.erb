@@ -1,0 +1,17 @@
+Cookie Data<%= cookies[:user_details] %><br>
+Database Data <%= current_user.no_otp %><br>
+
+<%= link_to "Logout", destroy_user_session_path, :method => 'DELETE'  %>
+
+
+
+<% if current_user.otp_required_for_login %>
+	<%= link_to "Deactivate two factor", switch_deactivate_path  %>
+	<% if current_user.no_otp ==nil %>
+		<%= link_to "Remember Me For 1 Hour", remember_activate_path %>
+	<% else %>
+		<%= link_to 'Forget Me', remember_deactivate_path %>
+	<% end %>
+<% else %>
+  <%= link_to "Activate two factor", switch_activate_path %>
+<% end %>
