@@ -6,12 +6,12 @@ Database Data <%= current_user.no_otp %><br>
 
 
 <% if current_user.otp_required_for_login %>
-	<%= link_to "Deactivate two factor", switch_deactivate_path  %>
+	<%= link_to "Deactivate two factor", two_factor_deactivate_path  %>
 	<% if current_user.no_otp ==nil %>
-		<%= link_to "Remember Me For 1 Hour", remember_activate_path %>
+		<%= link_to "Remember Me For 1 Hour", remember_me_remember_path %>
 	<% else %>
-		<%= link_to 'Forget Me', remember_deactivate_path %>
+		<%= link_to 'Forget Me', remember_me_forget_path %>
 	<% end %>
 <% else %>
-  <%= link_to "Activate two factor", switch_activate_path %>
+  <%= link_to "Activate two factor", two_factor_activate_path %>
 <% end %>

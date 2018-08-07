@@ -3,7 +3,7 @@
 <%= flash[:message] %>
 
 
-<%= form_with scope: :confirm, url: switch_disable_path, local: true do |form| %>
+<%= form_with scope: :confirm, url: two_factor_disable_path, local: true do |form| %>
 	<%= form.label :confirm_password %>
 	<%= form.password_field :password, placeholder: 'Confirm Password' %> <br>
 	
